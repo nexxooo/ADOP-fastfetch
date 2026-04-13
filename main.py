@@ -16,9 +16,13 @@ try:
         image = requests.get(urlImage)
 
         chemin = os.path.expanduser("~/.config/fastfetch/image.jpg")
+        chemindes = os.path.expanduser("~/.config/fastfetch/nasa_desc.txt")
 
         with open(chemin, "wb") as f: 
             f.write(image.content)
+        desc = data.get("explanation","")
+        with open(chemindes,"w") as d:
+            d.write(desc)
 
 except requests.exceptions.HTTPError as err:
     print(f"Erreur HTTP : {err}")
