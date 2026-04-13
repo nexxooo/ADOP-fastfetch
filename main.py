@@ -21,6 +21,7 @@ try:
         with open(chemin, "wb") as f: 
             f.write(image.content)
         desc = data.get("explanation","")
+        desc = (desc[:150]+"...") if len(desc) > 150 else desc
         with open(chemindes,"w") as d:
             d.write(desc)
 
