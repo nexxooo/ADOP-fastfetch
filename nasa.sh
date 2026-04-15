@@ -6,4 +6,5 @@ while ! ping -c 1 -W 1 8.8.8.8 &>/dev/null; do
 done
 
 python3 ~/.config/sway/main.py
-
+fastfetch --logo-recache
+notify-send "ADOP update"
